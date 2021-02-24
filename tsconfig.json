@@ -1,7 +1,10 @@
 {
     "compilerOptions": {
+        "target": "ES6",
         "jsx": "react",
         "module": "ESNext",
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "strict": true
     }
 }
