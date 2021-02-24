@@ -1,24 +1,13 @@
-import { observer } from 'mobx-react';
 import * as React from "react";
-import { List } from './list';
-import { State } from '../data';
+import { observer } from 'mobx-react';
+import { Person } from '../data';
+import { PersonView } from './person';
 
-interface Props  {
-    state: State;
+interface Props {
+    value?: Person[];
 }
-const ArraySampleView = observer(( { state } : Props) => {
-    return (
-        <div>
-            <h3>Array sample</h3>
-            <h4>Initialized:</h4>
-            <List value={state.customers} />
-            <button onClick={state.addPerson} >Add some items</button>
-            <button onClick={state.changeArray} >Change array</button>
-        
-         
-        </div>
-    )
-});
-
-const state = new State();
-export const ArraySample = () => <ArraySampleView state={state} />
+export const List = observer(({value} : Props) =>
+    <ul>
+        {value?.map((x, i) => <PersonView key={i} value={x} />)}
+    </ul>
+);

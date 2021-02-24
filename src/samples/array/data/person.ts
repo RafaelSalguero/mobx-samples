@@ -11,13 +11,13 @@ export class PersonViewModel implements Person {
     name: string = "";
 
     @observable
-    age: number;
+    age: number = 0;
 
     type = "viewmodel" as const;
 }
 
 export class PersonClass implements Person {
     name: string = "";
-    age: number;
+    age: number = 0;
     type = "class" as const;
 }
