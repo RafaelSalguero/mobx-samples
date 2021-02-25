@@ -21,3 +21,7 @@ export class PersonClass implements Person {
     age: number = 0;
     type = "class" as const;
 }
+
+export class Lista {
+    personas: PersonClass[] = [];
+}
